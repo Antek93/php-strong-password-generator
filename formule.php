@@ -14,8 +14,8 @@ function length_selector($length) {
         $newLength = 40;
     } else if ($length == "50") {
         $newLength = 50;
-    } else if ($length == "100") {
-        $newLength = 100;
+    } else if ($length == "70") {
+        $newLength = 70;
     }
 
     return $newLength;
