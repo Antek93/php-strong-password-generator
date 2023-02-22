@@ -1,9 +1,5 @@
 <?php
 
-if (isset($_GET['range'])) {
-    $selected_length = $_GET['range'];
-
-
 function length_selector($length) {
     if ($length == "00") {
         $newLength = 0;
@@ -24,7 +20,6 @@ function length_selector($length) {
     return $newLength;
 };
 
-$ultimate_length = length_selector($selected_length);
 
 function generateRandomString($length)
 {
@@ -36,15 +31,3 @@ function generateRandomString($length)
     }
     return $randomString;
 };
-
-$password = generateRandomString($ultimate_length);
-
-session_start();
-
-$_SESSION["new"] = $password;
-
-if ($password >= 10) {
-    header ('location: ./showpassword.php');
-}
-}
-?>

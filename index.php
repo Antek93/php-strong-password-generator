@@ -1,5 +1,22 @@
 <?php
 include __DIR__ . '/formule.php';
+
+if (isset($_GET['range'])) {
+    $selected_length = $_GET['range'];
+
+
+    $ultimate_length = length_selector($selected_length);
+
+    $password = generateRandomString($ultimate_length);
+
+    session_start();
+
+    $_SESSION["new"] = $password;
+
+    if ($password >= 10) {
+        header('location: ./showpassword.php');
+    }
+}
 ?>
 
 <!DOCTYPE html>
