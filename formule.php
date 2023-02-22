@@ -1,5 +1,8 @@
 <?php
-$selected_length = $_GET['range'];
+
+if (isset($_GET['range'])) {
+    $selected_length = $_GET['range'];
+
 
 function length_selector($length) {
     if ($length == "00") {
@@ -43,5 +46,5 @@ $_SESSION["new"] = $password;
 if ($password >= 10) {
     header ('location: ./showpassword.php');
 }
-
+}
 ?>
